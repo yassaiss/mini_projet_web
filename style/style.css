@@ -1,0 +1,230 @@
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    /* Couleurs principales et thème */
+    --primary-color: #007bff;
+    --primary-hover: #0056b3;
+    --dark-header: #1a252f;
+    --dark-nav: #2c3e50;
+    --dark-sub-header: #34495e;
+    /* Couleurs de fond */
+    --bg-body: #f4f6f9;
+    --bg-card: #ffffff;
+    --bg-search: #e9ecef;
+    --bg-placeholder: #e2e8f0;
+    /* Couleurs de texte */
+    --text-primary: #333333;
+    --text-muted: #4a5568;
+    --text-light: #ffffff;
+    --text-placeholder: #64748b;
+    --text-price: #d9534f;
+    /* Couleurs de bordures */
+    --border-color: #dddddd;
+    --border-table: #cccccc;
+    --border-placeholder: #cbd5e1;
+}
+
+body {
+    margin: 0;
+    background: var(--bg-body);
+    color: var(--text-primary);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+}
+.logo {
+    display: flex;
+}
+
+.logo h1 {
+    margin: 0;
+    padding: 5px 8px;
+    border-radius: 3px;
+    background: var(--primary-color);
+    color: var(--text-light);
+    font-size: 18px;
+    text-transform: uppercase;
+}
+
+header {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 12px;
+    padding: 12px 16px;
+    background: var(--dark-header);
+    color: var(--text-light);
+}
+
+nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+nav a {
+    display: flex;
+    align-items: center;
+    padding: 6px 9px;
+    border-radius: 3px;
+    background: var(--dark-nav);
+    color: var(--text-light);
+    text-decoration: none;
+    transition: background-color 150ms ease;
+}
+
+nav a:hover,
+nav a:focus-visible {
+    background: var(--primary-hover);
+}
+
+.page {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+        "a"
+        "b"
+        "c";
+    align-items: start;
+    gap: 16px;
+    width: 100%;
+    max-width: 720px;
+    margin: 16px auto;
+    padding: 0 12px;
+}
+
+.bloca,
+.blocb,
+.blocc {
+    min-width: 0;
+    padding: 18px;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    background: var(--bg-card);
+    box-shadow: 0 1px 3px rgb(22 37 52 / 5%);
+}
+
+.bloca {
+    grid-area: a;
+}
+
+.blocb {
+    grid-area: b;
+}
+
+.blocc {
+    grid-area: c;
+}
+
+.bloca h2,
+.blocb h2,
+.blocc h2 {
+    margin: 0 0 12px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid var(--primary-color);
+    font-size: 18px;
+}
+
+.bloca p,
+.blocb p,
+.blocc p {
+    margin: 8px 0;
+    line-height: 1.55;
+}
+
+.categories,
+.categories ul,
+.categories ol {
+    padding-left: 22px;
+}
+
+.categories {
+    margin: 8px 0 0;
+}
+
+.categories ul,
+.categories ol {
+    margin: 4px 0;
+}
+
+.categories li {
+    padding: 2px 0;
+    line-height: 1.4;
+}
+
+a {
+    color: var(--primary-color);
+}
+
+form {
+    display: grid;
+    gap: 8px;
+}
+
+form label {
+    margin-top: 4px;
+    font-weight: 700;
+}
+
+form input {
+    width: 100%;
+    min-height: 36px;
+    padding: 8px 10px;
+    border: 1px solid var(--border-color);
+    border-radius: 3px;
+    font: inherit;
+}
+
+form input:focus {
+    border-color: var(--primary-color);
+    outline: 2px solid rgb(49 132 237 / 18%);
+}
+
+form button {
+    justify-self: start;
+    margin-top: 4px;
+    padding: 9px 14px;
+    border: 0;
+    border-radius: 3px;
+    background: var(--primary-color);
+    color: var(--text-light);
+    font: inherit;
+    cursor: pointer;
+}
+
+form button:hover {
+    background: var(--primary-hover);
+}
+
+.signup {
+    margin-top: 18px !important;
+    font-size: 13px;
+}
+
+@media (min-width: 768px) {
+    header {
+        align-items: center;
+        flex-direction: row;
+        justify-content: space-between;
+        gap: 24px;
+        padding: 12px 5%;
+    }
+
+    nav ul {
+        gap: 20px;
+    }
+
+    .page {
+        grid-template-columns: minmax(0, 2fr) minmax(260px, 1fr);
+        grid-template-areas:
+            "a c"
+            "b c";
+        max-width: 1120px;
+        margin: 24px auto;
+        padding: 0 20px;
+    }
+}
