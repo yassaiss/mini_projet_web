@@ -35,6 +35,7 @@ body {
 }
 .logo {
     display: flex;
+    flex-direction: column;
 }
 
 .logo h1 {
@@ -56,6 +57,15 @@ header {
     background: var(--dark-header);
     color: var(--text-light);
 }
+footer {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    background: var(--dark-header);
+    color: var(--text-light);
+}
 
 nav ul {
     display: flex;
@@ -74,11 +84,9 @@ nav a {
     background: var(--dark-nav);
     color: var(--text-light);
     text-decoration: none;
-    transition: background-color 150ms ease;
 }
 
-nav a:hover,
-nav a:focus-visible {
+nav a:hover{
     background: var(--primary-hover);
 }
 
@@ -176,7 +184,6 @@ form input {
     padding: 8px 10px;
     border: 1px solid var(--border-color);
     border-radius: 3px;
-    font: inherit;
 }
 
 form input:focus {
@@ -192,16 +199,14 @@ form button {
     border-radius: 3px;
     background: var(--primary-color);
     color: var(--text-light);
-    font: inherit;
-    cursor: pointer;
 }
 
 form button:hover {
     background: var(--primary-hover);
 }
 
-.signup {
-    margin-top: 18px !important;
+.inscription {
+    margin-top: 18px ;
     font-size: 13px;
 }
 
